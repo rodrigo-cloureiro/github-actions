@@ -1,0 +1,20 @@
+name: Hello Actions
+
+on:
+  [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Olá, GitHub Actions!"
+
+# * * * * *
+# https://crontab.guru/ ->> Guia
+# MINUTO | HORA | DIA DO MÊS | MÊS | DIA DA SEMANA
+# Todo dia as 9 ->> 0 9 * * *
+# A cada 6 horas ->> 0 */6 * * *
+# A cada 15 minutos ->> */15 * * * *
+# Toda Segunda-Feira meia noite ->> 0 0 * * 1
+# Dia 1 de cada mês as 3 ->> 0 3 1 * *
