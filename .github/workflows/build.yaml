@@ -23,4 +23,19 @@ jobs:
           pip install -r requirements.txt
 
       - name: Executar testes
-        run: pytest -v
+        run: pytest -v > resultado_teste
+
+      - name: Sucesso
+        if: ${{ success() }}
+        run: echo "Todos os steps foram concluídos com sucesso"
+
+      - name: Erro
+        if: ${{ failure() }}
+        run: echo "Falhou"
+
+      - name: Upload file
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultado
+          path: resultado_teste
