@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Hello
-        run: echo "Olá, GitHub Actions!"
+        run: echo "Olá, GH actions ${{github.repository}}  - ${{github.actor}} - ${{github.ref}} - ${{github.sha}} - ${{github.event_name}}"
 
 # * * * * *
 # https://crontab.guru/ ->> Guia
@@ -18,3 +18,9 @@ jobs:
 # A cada 15 minutos ->> */15 * * * *
 # Toda Segunda-Feira meia noite ->> 0 0 * * 1
 # Dia 1 de cada mês as 3 ->> 0 3 1 * *
+
+# github.repository -> nome repositorio
+# github.actor -> commiter
+# github.ref -> branch
+# github.sha -> hash do commit
+# github.event_name => evento que iniciou a action
