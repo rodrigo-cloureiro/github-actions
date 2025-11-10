@@ -9,6 +9,15 @@ jobs:
     steps:
       - name: Say Hello
         run: echo "Olá, GH actions ${{github.repository}}  - ${{github.actor}} - ${{github.ref}} - ${{github.sha}} - ${{github.event_name}}"
+      
+      - name: Generate file
+        run: echo "Último build feito por ${{github.actor}} em $(date)" > status.txt
+      
+      - name: Upload file
+        uses: actions/upload-artifact@v4
+        with:
+          name: status
+          path: status.txt
 
 # * * * * *
 # https://crontab.guru/ ->> Guia
