@@ -1,0 +1,22 @@
+name: Exemplo de Output
+on: [push]
+
+jobs:
+  exemplo1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 - Gerar uma saida
+        id: gerar
+        run: |
+          echo "valor_teste=Olá do step 1" >> $GITHUB_OUTPUT
+          echo "numero=$((1 + 1))" >> $GITHUB_OUTPUT
+          echo "data_inicio=$(date)" >> $GITHUB_OUTPUT
+      - name: Step 2 - Ler a saida do step anterior
+        run: |
+          echo "valor_teste: ${{steps.gerar.outputs.valor_teste}}"
+          echo "numero: ${{steps.gerar.outputs.numero}}"
+          echo "data_inicio: ${{steps.gerar.outputs.data_inicio}}"
+
+      - name: Step 3 usar a saida num condicional
+        if: ${{steps.gerar.outputs.numero == '2'}}
+        run: echo "a saida era 2 mesmo!"

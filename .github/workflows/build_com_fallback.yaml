@@ -39,6 +39,7 @@ jobs:
           else 
             echo "O Step rodou!"
           fi
+      
       - name: Forcar falha se pytest falhar
         if: ${{ steps.tests.outcome == 'failure'}}
         run: exit 1
