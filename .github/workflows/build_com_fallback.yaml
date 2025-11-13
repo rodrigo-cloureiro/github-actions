@@ -34,14 +34,13 @@ jobs:
 
       - name: Verificar resultado do Pytest
         run: |
-          if [ "${{ steps.tests.outcome }}" == "failure" ]; then
-            echo "O step 'test' falhou"
-          else
-            echo "O step rodou!"
+          if [ "${{steps.tests.outcome}}" == "failure" ]; then
+            echo: "O step 'test' falhou"
+          else 
+            echo "O Step rodou!"
           fi
-
-      - name: Forçar falha se Pytest falhar
-        if: ${{ steps.tests.outcome}} == "failure"
+      - name: Forcar falha se pytest falhar
+        if: ${{ steps.tests.outcome == 'failure'}}
         run: exit 1
 
       - name: Upload file
