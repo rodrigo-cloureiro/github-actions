@@ -69,4 +69,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git commit -am "Atualiza a badge de cobertura: ${{ steps.badge.outputs.cobertura || '' }}"
-          git push origin master
+          git push origin main
