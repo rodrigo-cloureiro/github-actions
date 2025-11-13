@@ -1,4 +1,4 @@
-name: CI com badge estático
+name: CI com badge estático (JSON)
 
 on: [push]
 
@@ -35,10 +35,10 @@ jobs:
            echo "Cobertura: ${PERCENT}%"
 
            # Define cor conforme o nível (HEX válido)
-           if   [ "${PERCENT}" -ge 90 ]; then COLOR="brightgreen";      # brightgreen
-           elif [ "${PERCENT}" -ge 75 ]; then COLOR="yellowgreen";   # green
-           elif [ "${PERCENT}" -ge 50 ]; then COLOR="orange";   # yellow
-           else                             COLOR="red";     # red
+           if   [ "${PERCENT}" -ge 90 ]; then COLOR="brightgreen";  # brightgreen
+           elif [ "${PERCENT}" -ge 75 ]; then COLOR="yellowgreen";  # green
+           elif [ "${PERCENT}" -ge 50 ]; then COLOR="orange";       # yellow
+           else                               COLOR="red";          # red
            fi
 
            echo "percent=${PERCENT}" >> "$GITHUB_OUTPUT"

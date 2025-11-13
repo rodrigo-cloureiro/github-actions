@@ -14,11 +14,13 @@ Projeto didático em Python usado para demonstrar integração contínua (CI) co
 
 ## 🧱 Estrutura do Projeto
 
+```bash
 .
 ├─ sisrel.py # Código principal do sistema
 ├─ requirements.txt # Dependências do projeto
 ├─ tests/ # Testes unitários com pytest
 └─ .github/workflows/ # Workflows do GitHub Actions
+```
 
 ---
 
@@ -52,11 +54,13 @@ Status do build:
 
 ## 🧪 Testes e Cobertura
 
-(Em breve) adicionaremos pytest-cov para exibir porcentagem de cobertura de testes.
+pytest-cov para exibir porcentagem de cobertura de testes.
 
 Badge de cobertura:
 
 ![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/rodrigo-cloureiro/github-actions/main/coverage.json)
+
+![Coverage](https://raw.githubusercontent.com/rodrigo-cloureiro/github-actions/master/coverage-badge.svg)
 
 ---
 
