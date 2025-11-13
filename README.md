@@ -54,9 +54,9 @@ Status do build:
 
 (Em breve) adicionaremos pytest-cov para exibir porcentagem de cobertura de testes.
 
-Badge de cobertura (futuro):
+Badge de cobertura:
 
-https://img.shields.io/badge/coverage-100%25-brightgreen
+![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/rodrigo-cloureiro/github-actions/main/coverage.json)
 
 ---
 
