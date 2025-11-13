@@ -1,4 +1,4 @@
-name: Build Python
+name: Build Python com Fallback
 
 on:
   push:
@@ -34,12 +34,12 @@ jobs:
 
       - name: Verificar resultado do Pytest
         run: |
-          if [ "${{steps.tests.outcome}}" == "failure" ]; then
-            echo: "O step 'test' falhou"
+          if [ "${{ steps.tests.outcome }}" == "failure" ]; then
+            echo "::error::O step 'test' falhou"
           else 
-            echo "O Step rodou!"
+            echo "O step rodou!"
           fi
-      
+
       - name: Forcar falha se pytest falhar
         if: ${{ steps.tests.outcome == 'failure'}}
         run: exit 1
